@@ -1,0 +1,4 @@
+other/.ssh
+zsh/go_env.zsh
+ignore_env/*
+
