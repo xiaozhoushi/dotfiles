@@ -44,7 +44,9 @@ installUbuntu() {
 	which pip3 >/dev/null && echo "pip installed, moving on..." || sudo apt install -y python3-pip >/dev/null
 	which node >/dev/null && echo "node installed, moving on..." || sudo apt install -y nodejs
 	sudo apt install -y npm
-	mkdir ~/.npm-global
+  if [ ! -d "~/.npm-global/" ];then
+	  mkdir ~/.npm-global
+  fi
 	npm config set prefix '~/.npm-global'
 
 	sudo apt install -y tmux
@@ -73,6 +75,7 @@ installUbuntu() {
 	npm install -g tree-sitter-cli
 	pip3 install pynvim -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com
 	curl --proto '=https' --tlsv1.3 -sSf https://sh.rustup.rs | sh
+  source ~/.cargo/env
 	rustup default nightly
 
 	echo "install lunarvim..."
