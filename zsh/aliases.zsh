@@ -8,6 +8,7 @@ alias lg="lazygit"
 alias ra='ranger'
 alias g='onefetch'
 alias c='clear'
+alias ra='joshuto'
 
 alias vim='lvim'
 alias sde='sudo -E'

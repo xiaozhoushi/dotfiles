@@ -50,7 +50,7 @@ installUbuntu() {
 	npm config set prefix '~/.npm-global'
 
 	sudo apt install -y tmux
-	sudo apt install -y ranger
+  cargo install --git https://github.com/kamiyaa/joshuto.git --force
 
 	echo "install zsh..."
 	sudo apt install -y zsh
@@ -78,10 +78,6 @@ installUbuntu() {
   source ~/.cargo/env
 	rustup default nightly
 
-	echo "install lunarvim..."
-  LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
-  #mv ~/.config/lvim ~/.config/lvim.new
-  #mv ~/.config/lvim.old ~/.config/lvim
 
 	echo "install tmux..."
 	git clone https://github.com/gpakosz/.tmux.git ~/.config/.tmux
@@ -110,6 +106,11 @@ installUbuntu() {
 
 	echo "install lazydocker..."
 	curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
+
+	echo "install lunarvim..."
+  LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
+  #mv ~/.config/lvim ~/.config/lvim.new
+  #mv ~/.config/lvim.old ~/.config/lvim
 
 	'''
 	echo "install anaconda..."
